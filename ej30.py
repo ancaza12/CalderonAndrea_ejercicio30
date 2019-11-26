@@ -3,7 +3,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 plt.figure()
-data = np.loadtxt('ej29.dat')
+data = np.loadtxt('ej30.dat')
 
 plt.subplot(121)
 plt.plot(data[:,0], data[:,1])
