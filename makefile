@@ -1,11 +1,25 @@
-resutado.png : ej30.dat ej30.py
-	python ej30.py
-    
-ej30.dat : ej30.x
-	./ej30.x > ej30.dat
+all: evolve_A.png evolve_B.png evolve_C.png
 
-ej30.x : ej30.cpp
-	c++ ej30.cpp -o ej30.x
+evolve_A.png: evolve_30_450.dat evolve_31_450.dat evolve_29_450.dat evolve_30_440.dat plot.py
+	python plot.py
 
-clean:
-	rm -rf ej30.x ej30.dat resutado.png
+evolve_B.png: evolve_30_450.dat evolve_31_450.dat evolve_29_450.dat evolve_30_440.dat plot.py
+	python plot.py
+
+evolve_C.png: evolve_30_450.dat evolve_31_450.dat evolve_29_450.dat evolve_30_440.dat plot.py
+	python plot.py
+
+evolve_30_450.dat : evolve.x
+	./evolve.x 30 450 > evolve_30_450.dat
+
+evolve_31_450.dat : evolve.x
+	./evolve.x 31 450 > evolve_31_450.dat
+
+evolve_29_450.dat : evolve.x
+	./evolve.x 29 450 > evolve_29_450.dat
+
+evolve_30_440.dat : evolve.x
+	./evolve.x 30 440 > evolve_30_440.dat
+
+evolve.x : evolve.cpp
+	c++ evolve.cpp -o evolve.x
