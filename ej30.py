@@ -2,15 +2,23 @@ import os
 import numpy as np
 import matplotlib.pyplot as plt
 
-plt.figure()
+plt.figure(figsize=(10,5))
 data = np.loadtxt('ej30.dat')
 
-plt.subplot(121)
+plt.subplot(131)
 plt.plot(data[:,0], data[:,1])
+plt.xlabel('N_x')
+plt.ylabel('N iteraciones')
 
-plt.subplot(122)
+plt.subplot(132)
 plt.plot(data[:,0], data[:,1])
-plt.xlabel('X')
-plt.ylabel('Y')
+plt.xlabel('N_x')
+plt.ylabel('Error centro x10^2')
 
-plt.savefig('difusion.png')
+plt.subplot(133)
+plt.plot(data[:,0], data[:,1])
+plt.xlabel('N_x')
+plt.ylabel('Error convergencia x10^6')
+
+plt.savefig('resultado.png')
+
