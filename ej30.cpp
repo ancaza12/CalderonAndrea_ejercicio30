@@ -27,7 +27,7 @@ void eq(string nombre);
 	
 int main() 
 { 
-	string nombre = "ej29.dat";
+	string nombre = "ej30.dat";
  	eq(nombre);
 	return 0; 
 } 
